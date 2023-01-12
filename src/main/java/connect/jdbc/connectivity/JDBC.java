@@ -7,14 +7,14 @@ public class JDBC {
 
     public static void main(String[] args) throws SQLException {
 
-        String url = "main: /home/fikilegqibitole/NEWDB";
+        String url = "jdbc:sqlite:/home/fikilegqibitole/NEWDB";
         String query = "select * from SBHotel";
 
-        try{
+        /*try{
             Class.forName("");
         } catch (ClassNotFoundException e){
             e.printStackTrace();
-        }
+        }*/
 
         try {
             Connection connect = DriverManager.getConnection(url);
@@ -23,7 +23,7 @@ public class JDBC {
 
             while(set.next()){
                 String SBHotelData = "";
-                for(int i = 1; i <= 6;i++){
+                for(int i = 1; i <= 4;i++){
                     SBHotelData += set.getString(i) + ":";
                  }
                 System.out.println(SBHotelData);
